@@ -4,11 +4,11 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -126,4 +126,17 @@
   .logo img {
     filter: invert(1);
   }
+}
+
+/* Navbar */
+.mainNav ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.mainNav ul li {
+  margin: 0 24px;
+  list-style: none;
+  font-weight: bold;
 }
