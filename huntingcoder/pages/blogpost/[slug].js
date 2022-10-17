@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 const Slug = () => {
   const router = useRouter();
   const { slug } = router.query;
-  return <div>{slug}</div>;
+  return <div>slug : {slug}</div>;
 };
 
 export default Slug;
