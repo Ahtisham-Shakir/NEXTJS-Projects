@@ -2,21 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../../styles/BlogPost.module.css";
 
-const Slug = () => {
-  const [blog, setBlog] = useState({});
-
-  const router = useRouter();
-  useEffect(() => {
-    if (!router.isReady) return;
-
-    const { slug } = router.query;
-    fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setBlog(data);
-        console.log(data);
-      });
-  }, [router.isReady]);
+const Slug = (props) => {
+  const [blog, setBlog] = useState(props.blog);
 
   return (
     <div className={styles.container}>
@@ -29,4 +16,13 @@ const Slug = () => {
   );
 };
 
+export async function getServerSideProps(context) {
+  const { slug } = context.query;
+  let data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`);
+  let blog = await data.json();
+
+  return {
+    props: { blog },
+  };
+}
 export default Slug;
