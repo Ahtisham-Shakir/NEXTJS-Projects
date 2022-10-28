@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -22,11 +21,19 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Hunting Coder</h1>
         <div className={styles.imgContainer}>
-          <Image
+          {/* we cannot use next Image component in static site generation */}
+          {/* <Image
             src={"/home.jpg"}
             className={styles.myImg}
             width={240}
             height={160}
+          /> */}
+          <img
+            className={styles.myImg}
+            src="/home.jpg"
+            width={240}
+            height={160}
+            alt="hunting coder"
           />
         </div>
 
@@ -57,10 +64,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          Powered by <span className={styles.logo}>Ahtisham Shakir</span>
         </a>
       </footer>
     </div>
