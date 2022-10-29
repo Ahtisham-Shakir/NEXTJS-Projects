@@ -11,12 +11,13 @@ const Blog = (props) => {
       <main className={styles.main}>
         {blogs.map((item) => (
           <div key={item.slug}>
-            <Link href={`/blogpost/${item.slug}`}>
-              <h3 className={styles.blogItemh3}>{item.title}</h3>
-            </Link>
+            <h3 className={styles.blogItemh3}>{item.title}</h3>
             <p className={styles.blogItemp}>
               {item.metaDesc.substr(0, 120)}...
             </p>
+            <Link href={`/blogpost/${item.slug}`}>
+              <button className={styles.btn}>Read more</button>
+            </Link>
           </div>
         ))}
       </main>

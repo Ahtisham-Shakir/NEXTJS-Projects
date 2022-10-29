@@ -50,7 +50,7 @@ const Contact = () => {
           </label>
           <input
             type="text"
-            className="form-control"
+            className={styles.input}
             id="name"
             aria-describedby="emailHelp"
             name="name"
@@ -64,7 +64,7 @@ const Contact = () => {
           </label>
           <input
             type="email"
-            className="form-control"
+            className={styles.input}
             id="email"
             aria-describedby="emailHelp"
             name="email"
@@ -78,7 +78,7 @@ const Contact = () => {
           </label>
           <input
             type="number"
-            className="form-control"
+            className={styles.input}
             id="phone"
             aria-describedby="emailHelp"
             name="phone"
@@ -86,18 +86,19 @@ const Contact = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="form-floating">
-          <label htmlFor="floatingTextarea2">Comments</label>
+        <div className={styles.mb3}>
+          <label htmlFor="floatingTextarea2" className={styles.formLabel}>
+            Comments
+          </label>
           <textarea
-            className="form-control"
-            placeholder="Leave a comment here"
+            className={styles.input}
             id="floatingTextarea2"
             name="desc"
             value={formData.desc}
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className={styles.btn}>
           Submit
         </button>
       </form>
